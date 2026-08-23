@@ -1,0 +1,1 @@
+revoke all on function public.archive_deleted_row() from public, anon, authenticated;

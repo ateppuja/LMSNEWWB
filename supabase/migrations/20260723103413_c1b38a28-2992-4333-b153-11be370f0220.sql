@@ -1,0 +1,1 @@
+ALTER TABLE public.subjects ADD COLUMN IF NOT EXISTS class_id TEXT;
