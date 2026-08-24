@@ -1,14 +1,9 @@
 {
-  "buildCommand": "npm run build",
   "outputDirectory": ".output/public",
-  "cleanUrls": true,
-  "routes": [
+  "rewrites": [
     {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/.*",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
