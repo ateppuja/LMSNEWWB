@@ -12,4 +12,16 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Prevent Rollup from splitting SSR into multiple chunks which can introduce
+  // circular imports for helper functions (e.g. __exportAll). Inlining dynamic
+  // imports avoids the circular-initialization issue in the Vercel runtime.
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          inlineDynamicImports: true,
+        },
+      },
+    },
+  },
 });
